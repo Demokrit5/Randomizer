@@ -43,6 +43,11 @@ public class Randomizer extends JavaPlugin implements Listener {
     @EventHandler
     public void onBlockBreak(BlockBreakEvent e) {
         if (this.enabled) {
+            /*
+                TODO
+                check if individualRandomizer is set
+                if yes then add player as argument to getPartner()
+             */
             e.setDropItems(false);
             if (e.getPlayer().getGameMode().equals(GameMode.SURVIVAL)) {
                 e.getBlock().getWorld().dropItemNaturally(e.getBlock().getLocation(),
@@ -52,6 +57,11 @@ public class Randomizer extends JavaPlugin implements Listener {
     }
 
     public Material getPartner(Material mat) {
+        /*
+            TODO
+            check if individualRandomizer is set in config
+            if yes then get from partners + uuid-player + mat
+         */
         Material randpart;
         try {
             randpart = Material.valueOf(this.getConfig().getString("partners." + mat.toString()));

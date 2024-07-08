@@ -16,6 +16,15 @@ application {
     mainClass.set("xyz.motz.randomizer.main.Randomizer")
 }
 
+/*
+    TODO
+    compile for specific version so to use only materials (items) from the server version
+    https://www.spigotmc.org/threads/multi-version-maven-project.168485/
+    https://github.com/MiniDigger/RideThaMobv3/blob/master/pom.xml
+
+
+ */
+
 repositories {
     mavenCentral()
     maven("https://jitpack.io")

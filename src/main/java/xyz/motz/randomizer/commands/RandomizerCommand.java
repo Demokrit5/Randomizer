@@ -39,6 +39,14 @@ public class RandomizerCommand implements CommandExecutor {
                     return true;
                 }
             }
+        } else if (args.length == 2) {
+            //TODO set permission somewhere?
+            if (sender.hasPermission("randomizer.individualRandomizer")) {
+                return new ShuffleCommand().onCommand(sender, command, label, args);
+            } else {
+                sender.sendMessage(ChatColor.RED + "You don't have permission to use this command!");
+                return true;
+            }
         }
 
         sender.sendMessage(ChatColor.AQUA + "[RANDOMIZER] " + ChatColor.GREEN + "Usage: " + ChatColor.GOLD

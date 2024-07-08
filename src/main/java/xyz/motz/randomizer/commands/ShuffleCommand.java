@@ -11,10 +11,24 @@ import java.util.Random;
 
 public class ShuffleCommand implements CommandExecutor {
 
+    /*
+        TODO
+        check version and only shuffle available items
+        -> avoid disabled items
+     */
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        /*
+            TODO
+            check if individualRandomizer is set
+            if not then old code
+            if yes than new code -> remaining als key-value pairs mit uuid für spieler & List<Material> wie remaining
+         */
+
         Randomizer.getPlugin().remaining.clear();
 
+        //TODO only fill with materials from this version
         for (Material mat : Material.values()) {
             if (mat.isItem()) {
                 Randomizer.getPlugin().remaining.add(mat);
@@ -31,6 +45,7 @@ public class ShuffleCommand implements CommandExecutor {
                     } else {
                         rand = 0;
                     }
+                    //TODO partners. + uuid of player + mat
                     Randomizer.getPlugin().getConfig().set("partners." + mat, Randomizer.getPlugin().remaining.get(rand).toString());
                     Randomizer.getPlugin().remaining.remove(rand);
                 }

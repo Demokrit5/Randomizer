@@ -9,6 +9,11 @@ import java.util.ArrayList;
 public class CommandTabListener implements Listener {
     private final ArrayList<String> commands = new ArrayList<>();
 
+    /*
+        TODO
+        add new individualRandomizer command
+     */
+
     public CommandTabListener() {
         commands.add("shuffle");
         commands.add("check");
